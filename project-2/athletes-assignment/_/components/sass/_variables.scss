@@ -1,0 +1,20 @@
+// Typografy //
+$header_font:              -apple-system-headline, 'Lato', sans-serif;
+$main_font:                -apple-system-body, 'Source Sans Pro', sans-serif;
+
+// Colors //
+$text_color:               #888;
+$header_text_color:        #222;
+$accent_color:             #e51d1f;
+$secondary_accent_color:   #ddd;
+$light_background_color:   #f5f5f5;
+$ios_green:                #4cd964;
+$ios_yellow:               #fc0;
+
+// UI Switch //
+$uiswitch-thumb-tint:      #ffffff !default;
+$uiswitch-on-tint:         $ios_green !default;
+$uiswitch-active-tint:     $secondary_accent_color !default;
+$uiswitch-on-tint-start:   $uiswitch-on-tint !default;
+$uiswitch-on-tint-end:     desaturate($uiswitch-on-tint-start, 1) !default;
+$uiswitch-off-tint:        #ffffff !default;

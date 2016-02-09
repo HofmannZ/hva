@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>CTO Lite</title>
+        <link rel="apple-touch-icon" href="./_/images/icon.png"/>
+        <link rel="apple-touch-startup-image" href="./_/images/splash.png" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="./_/css/styles.css">
+        <script src="./_/js/stay_standalone.js" type="text/javascript"></script>
+        <script src="_/js/firebase.js"></script>
+    </head>
+    <body>
+        <div id="loader"></div>
+        <main class="sequence prevent-loading">
+            <section class="alarm_active">
+                <img src="./_/images/sequence/wekker.svg" alt="Wekker">
+                <div class="centerpiece">
+                    <h3 id="alarmTime">07:00</h3>
+                </div>
+                <h2>Raak aan om te snoozen</h2>
+                <a href="sequence1.html" class="swipe_to_dismiss">
+                    <h6>STOP</h6>
+                </a>
+            </section>
+        </main>
+    </body>
+    <script src="_/js/main.js" type="text/javascript"></script>
+    <script src="_/js/data_connection.js" type="text/javascript"></script>
+</html>

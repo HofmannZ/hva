@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>CTO Lite</title>
+        <link rel="apple-touch-icon" href="./_/images/icon.png"/>
+        <link rel="apple-touch-startup-image" href="./_/images/splash.png" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="./_/css/styles.css">
+        <script src="./_/js/stay_standalone.js" type="text/javascript"></script>
+        <script src="_/js/firebase.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1><strong class="cto">CTO</strong> Lite</h1>
+            <a href="wekker.html"><img src="./_/images/jenny.jpg" alt="Foto Jenny de Jong"></a>
+        </header>
+        <div id="loader"></div>
+        <main class="prevent-loading">
+            <nav class="home">
+                <ul>
+                    <li>
+                        <h2>Wekker</h2>
+                        <a href="wekker_wijzig.html">
+                            <img src="./_/images/wekker.svg" alt="Wekker">
+                        </a>
+                        <div class="wekker_checkbox_area">
+                            <h5 id="alarmTime">07:00</h5>
+                            <input onclick="alarmSwitchClick();" id="alarmSwitch" type="checkbox" class="uiswitch">
+                        </div>
+                        <p id="alarmTimeTill">10 uur en 33 minuten tot afgaan</p>
+                    </li><!--
+                    --><li>
+                        <a href="statistieken_slaap.html">
+                            <img src="./_/images/statistieken.svg" alt="Statistieken">
+                            <h2>Statistieken</h2>
+                        </a>
+                    </li><!--
+                    --><li>
+                        <a href="schema.html">
+                            <img src="./_/images/schema.svg" alt="Schema">
+                            <h2>Schema</h2>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <aside>
+                <ul id="notifications">
+                </ul>
+            </aside>
+        </main>
+    </body>
+    <script src="_/js/main.js" type="text/javascript"></script>
+    <script src="_/js/data_connection.js" type="text/javascript"></script>
+</html>

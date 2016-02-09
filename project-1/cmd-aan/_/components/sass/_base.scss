@@ -1,0 +1,32 @@
+/*    typography   */
+body {
+    font-family: $primary-font;
+    font-size: 1em;
+    background-color: $special-accent-color;
+    color: $secondary-color;
+}
+
+#{headings()} {
+    font-family: $secondary-font;
+    color: $primary-accent-color;
+}
+h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+h3 {
+    margin: 2vh 0 0 3vh;
+    font-size: 1em;
+}
+small {
+    font-size: .7em;
+    margin-bottom: 1vh;
+    color: $secondary-accent-color;
+}
+strong {
+    font-weight: bold;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>CTO Lite</title>
+        <link rel="apple-touch-icon" href="./_/images/icon.png"/>
+        <link rel="apple-touch-startup-image" href="./_/images/splash.png" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="./_/css/styles.css">
+        <script src="./_/js/stay_standalone.js" type="text/javascript"></script>
+        <script src="./_/js/chart.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">
+                <img class="back" src="./_/images/back-dark.svg" alt="Back">
+            </a>
+            <h1>Statistieken</h1>
+            <a href="#">
+                <img class="header_icon" src="./_/images/tijd.svg" alt="Data range">
+            </a>
+        </header>
+        <main>
+            <section class="date_selector">
+                <img class="previous" src="./_/images/back.svg" alt="Vorige">
+                <h2>15 januari - 21 januari</h2>
+                <img class="next" src="./_/images/forward.svg" alt="Volgende">
+            </section>
+            <canvas id="humeurChart" class="chart"></canvas>
+            <section class="bar_no_style">
+                <h2>Je hebt meestal een <b>goed</b> humeur</h2>
+            </section>
+        </main>
+        <nav class="statistics">
+            <ul>
+                <li>
+                    <a href="./statistieken_slaap.html">
+                        <img src="./_/images/slaap.svg" alt="Slaap statistieken">
+                    </a>
+                </li><!--
+                --><li>
+                    <a href="#">
+                        <img src="./_/images/blij-active.svg" alt="Humeur statistieken">
+                    </a>
+                </li><!--
+                --><li>
+                    <a href="./statistieken_hartslag.html">
+                        <img src="./_/images/hartslag.svg" alt="Harslag statistieken">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </body>
+    <script src="./_/js/chart_defaults.js"></script>
+    <script src="./_/js/chart_humeur.js"></script>
+</html>

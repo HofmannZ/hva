@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Lato:300,400);
+body {
+    @include box-sizing(border-box);
+    overflow: hidden;
+    font-family: $main_font;
+    font-size: 1em;
+}
+
+p {
+    font-family: $main_font;
+    font-size: 1em;
+}
+
+h1 {
+    font-family: $header_font;
+    font-size: 1.9em;
+    font-weight: 300;
+    color: $header_text_color;
+    
+    strong {
+        font-weight: 400;
+        color: $accent_color;
+    }
+    
+}// h1
+
+h2 {
+    font-family: $main_font;
+    font-weight: 300;
+    font-size: 1.3em; 
+    color: $text_color; 
+    
+    strong {
+        font-weight: 400;
+    }
+    
+}// h2
+
+h3 {
+    font-family: $main_font;
+    font-weight: 300;
+    font-size: 6em;
+    color: $header_text_color;
+}
+
+h4 {
+    font-family: $main_font;
+    font-weight: 300;
+    font-size: 1.3em; 
+    color: $secondary_accent_color; 
+}
+
+h5 {
+    font-family: $main_font;
+    font-weight: 300;
+    font-size: 1.3em;
+    color: $header_text_color;
+    
+    strong {
+        font-weight: 400;
+    }
+    
+}// h5
+
+h6 {
+    font-family: $main_font;
+    font-weight: 300;
+    font-size: 1.6em;
+    color: $accent_color;
+}
+
+input,
+textarea,
+button,
+select,
+label,
+canvas,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}

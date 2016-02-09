@@ -1,0 +1,271 @@
+@include border-box-sizing;
+
+/*    
+    Header   
+*/
+
+header {
+    background-color: $primary-accent-color;
+    width: 100%;
+    height: 11vh;
+    min-height: 3.5em;
+    padding-top: 2vh;
+    position: fixed;
+    top: 0;
+    z-index: 8;
+        
+    h1 {
+        color: $primary-color;
+        text-align: center;
+    }
+    
+    .back-button {
+        display: inline-block;
+        position: absolute;
+        top: 2.5vh;
+        left: 2.5vh;
+        a {
+            text-decoration: none;
+            color: $primary-color;
+            
+            .material-icons {
+                position: relative;
+                left: 50%;
+                transform: translateX(-24px);
+                font-size: 2em;
+            }
+                
+        }         
+                
+    }
+    
+}
+
+/*     
+    Nav   
+*/
+
+nav {
+    position:fixed;
+    width: 100%;
+    height: 11vh;
+    min-height: 3.5em;
+    left:0px;
+    bottom:0px;
+    box-shadow: 0 -2px 2px 0 rgba(0,0,0,.14),0 -3px 1px -2px rgba(0,0,0,.2),0 -1px 5px 0 rgba(0,0,0,.12);
+    
+    ul {
+        
+        li {
+            display: inline-block;
+            width: 25%;
+            height: 11vh;
+            min-height: 3.5em;
+            background-color: $primary-color;
+            border-right: 1px solid $special-accent-color;
+            
+            a {
+                display: inline-block;
+                text-decoration: none;
+                color: $secondary-color;
+                width: 100%;
+                padding: 1vh 0;
+                
+                .material-icons {
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-12px)
+                }
+                
+                p {
+                    text-align: center;
+                }
+                
+            }
+            
+            &.active {
+                
+                background-color: $primary-accent-color;
+                
+                a {
+                    color: $primary-color;    
+                } 
+                
+            }
+            
+            &:last-child {
+                 border-right: none;
+            }
+            
+        }
+        
+    }
+    
+}
+
+/*    
+    Main   
+*/
+
+main {
+    margin: 13vh 2vh;
+    
+    section {  
+        background-color: $primary-color;
+        margin-top: 2vh;
+        padding: 2vh;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+        border-radius: 2px;
+        
+        p {
+            margin-top: .6vh;
+        }
+ 
+    }
+    
+}
+
+/*    
+    Timeline   
+*/
+
+article {
+    background-color: $primary-color;
+    padding: 2vh;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    border-radius: 2px;
+    
+    h2#time {
+        font-family: $digital-font;
+        font-size: 4.2em;
+        line-height: 1em;
+        display: inline-block;
+        width: 50%;
+        text-align: center;
+        margin: auto;
+    }
+    
+    .time-switch {
+        display: inline-block;
+        width: 25%;
+        font-size: .7em;
+        
+        &:hover {
+            cursor: pointer;
+        }
+        
+    }    
+    
+    #showPrevHour {
+        text-align: left;
+        
+        .material-icons {
+            position: relative;
+            left: 50%;
+            transform: translateX(-12px);
+        }
+    }
+    
+    #showNextHour {
+        text-align: right;
+        
+        .material-icons {
+            position: relative;
+            right: 50%;
+            transform: translateX(12px);
+        }
+        
+    }
+    #showCurrentHour{
+        border-top: 1px solid $special-accent-color; 
+        text-align: center;
+        font-size: .7em;
+        
+        .material-icons {
+            position: relative;
+            top: 50%;
+            transform: translatey(8px);
+        }
+        
+        &:hover {
+            cursor: pointer;
+        }
+        
+    }
+     
+}
+
+/*    
+    Places   
+*/
+
+#myMap {
+    width: 100%;
+    height: 78vh;
+    margin-top: 11vh;    
+} 
+
+/*
+    Search   
+*/
+
+.clickable-box {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+
+    .material-icons {
+        color: $primary-accent-color;
+        position: absolute;
+        right: 4vh;
+    }
+    
+    p {
+        color: $secondary-color;
+    }
+    
+}
+
+ul.citys {
+    margin-top: 2vh;
+    @include columns(2 auto);
+    @include column-gap(2vh); 
+    
+    li:before {
+        content: "\002022";
+        color: $primary-accent-color;
+        margin-right: 2vh;
+    }
+    
+}
+
+/*    
+    About   
+*/
+
+ul.information-links li {
+    width: 100%;
+    border-top: 1px solid $special-accent-color;
+    margin-right: 4vh;
+    a {
+        text-align: left;
+        text-decoration: none;
+        color: $primary-accent-color; 
+        width: 100%;
+        
+        .material-icons {
+            display: inline-block;
+            position: relative;
+            top: 50%;
+            transform: translateY(6px);
+        }
+        
+        p {
+            display: inline-block;
+            color: $secondary-color;
+            padding-left: 2vh;
+        }
+        
+    }    
+    
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>CTO Lite</title>
+        <link rel="apple-touch-icon" href="./_/images/icon.png"/>
+        <link rel="apple-touch-startup-image" href="./_/images/splash.png" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="./_/css/styles.css">
+        <script src="./_/js/stay_standalone.js" type="text/javascript"></script>
+        <script src="_/js/firebase.js"></script>
+    </head>
+    <body>
+        <main class="sequence">
+           <aside class="top_bar">
+                <a href="index.html" class="close">
+                    <img src="./_/images/sequence/cross.svg" alt="Sluit">
+                </a>
+            </aside>
+            <section class="sequence_content">
+                <h2 class="more_content">Hoe heb je geslapen ?</h2>
+                <div class="centerpiece less_center">
+                    <form id="sleepQuality" action="#">
+                        <div class="icon_selector">
+                            <input id="sleepQualityBad" class="QualityBad" type="radio" name="sleepQualitySelector" value="slecht" />
+                            <label class="icon_selector_item slecht" for="sleepQualityBad"></label>
+                            <input id="sleepQualityNeutral" class="QualityNeutral" type="radio" name="sleepQualitySelector" value="neutraal" />
+                            <label class="icon_selector_item neutraal" for="sleepQualityNeutral"></label>
+                            <input id="sleepQualityGood" class="QualityGood" type="radio" name="sleepQualitySelector" value="goed" />
+                            <label class="icon_selector_item goed" for="sleepQualityGood"></label>
+                        </div>
+                        <div id="commentArea" class="comment_area">
+                            <label for="sleepQualityComment">Opmerking: (optioneel)</label>
+                            <textarea id="sleepQualityComment"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <aside class="step_navigator">
+                <a href="sequence1.html"><img src="./_/images/back.svg" alt="Terug" class="previous"></a>
+                <h2>Stap 2 van 5</h2>
+                <a id="nextButton" onclick="sendSleepQuality();" href="sequence3.html"><img src="./_/images/forward.svg" alt="Volgende" class="next"></a>
+            </aside>
+        </main>
+    </body>
+    <script src="_/js/data_connection.js" type="text/javascript"></script>
+    <script src="./_/js/sequence.js"></script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>CTO Lite</title>
+        <link rel="apple-touch-icon" href="./_/images/icon.png"/>
+        <link rel="apple-touch-startup-image" href="./_/images/splash.png" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="./_/css/styles.css">
+        <script src="./_/js/stay_standalone.js" type="text/javascript"></script>
+        <script src="_/js/firebase.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">
+                <img class="back" src="./_/images/back-dark.svg" alt="Back">
+            </a>
+            <h1>Wijzig wekker</h1>
+        </header>
+        <div id="loader"></div>
+        <main class="prevent-loading">
+            <section class="alarm">
+                <form method="post">
+                    <input id="alarmTimeInput" type="time" class="input_time" value="08:13">
+                </form>
+                <p id="toutchToEdit">Raak aan om te wijzigen</p>
+                <p id="alarmTimeTill">10 uur en 33 minuten slaap</p>
+            </section>
+            <section class="options">
+                <section class="option">
+                    <h2>Aan/uit</h2>
+                    <input onclick="alarmSwitchClick();" id="alarmSwitch" type="checkbox" class="uiswitch">
+                </section>
+                <section class="option open_item">
+                    <h2>Geluid</h2>
+                    <h4>Standaard</h4>     
+                </section>
+                <section class="option">
+                    <h2>Snoozen</h2>
+                    <input type="checkbox" class="uiswitch" checked>
+                </section>
+            </section>
+        </main>
+        <aside>
+            <a class="button_bar accept" href="index.html">
+                <h2>Bewaar</h2>
+            </a>
+        </aside>
+    </body>
+    <script src="_/js/main.js" type="text/javascript"></script>
+    <script src="_/js/data_connection.js" type="text/javascript"></script>
+</html>

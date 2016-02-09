@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="theme-color" content="#E9322A">
+        <meta name="mobile-web-app-capable" content="yes">
+        <title>International Student Guide Amsterdam</title>
+        <link rel="shortcut icon" href="favicon.ico" >
+        <link href="_/fonts/css/fonts.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./_/css/styles.css">
+        <link rel="stylesheet" href="./_/mdl/material.css">
+        <script src="./_/mdl/material.min.js"></script>
+    </head>
+    <body>
+        <header class="mdl-shadow--8dp">
+            <h1>
+                ISGA assistant   
+            </h1>
+        </header>
+        <main>
+            <article>
+                <h2>Timeline</h2>
+                <div id="showPrevHour" class="time-switch">
+                    <i class="material-icons">navigate_before</i>
+                    <p>Prev hour</p>
+                </div><!--
+                --><h2 id="time">00.00</h2><!--
+                --><div id="showNextHour" class="time-switch">
+                    <i class="material-icons">navigate_next</i>
+                    <p>Next hour</p>
+                </div>
+                <label id="showCurrentHour">
+                    <i class="material-icons">access_time</i>
+                    Show current hour
+                </label>
+                
+            </article>
+            <ul id="timeline-section-list"></ul>       
+        </main>
+        <nav class="mdl-shadow--4dp">
+            <ul>
+                <li class="active">
+                    <a href="index.html">
+                        <i class="material-icons">access_time</i>
+                        <p>Timeline</p>
+                    </a>
+                </li><!--
+             --><li>
+                    <a href="places.html">
+                        <i class="material-icons">place</i>
+                        <p>Places</p>
+                    </a>
+                </li><!--
+             --><li>
+                    <a href="search.html">
+                        <i class="material-icons">search</i>
+                        <p>Search</p>
+                    </a>
+                </li><!--
+             --><li>
+                    <a href="menu.html">
+                        <i class="material-icons">info</i>
+                        <p>About</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script src="./_/js/firebase.js"></script>
+        <script src="./_/js/timeline.js"></script>
+    </body>
+</html>

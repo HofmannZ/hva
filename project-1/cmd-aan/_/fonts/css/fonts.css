@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'digital-7';
+    src: 	url('../font-files/digital-7/digital-7-webfont.eot');
+    src: 	url('../font-files/digital-7/digital-7-webfont.eot?#iefix') format('embedded-opentype'),
+url('../font-files/digital-7/digital-7-webfont.woff2') format('woff2'),
+url('../font-files/digital-7/digital-7-webfont.woff') format('woff'),
+url('../font-files/digital-7/digital-7-webfont.ttf') format('truetype'),
+url('../font-files/digital-7/digital-7-webfont.svg#digital-7regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'scala-sans';
+    src: 	url('../font-files/scala-sans/scalasans-webfont.eot');
+    src: 	url('../font-files/scala-sans/scalasans-webfont.eot?#iefix') format('embedded-opentype'),
+url('../font-files/scala-sans/scalasans-webfont.woff2') format('woff2'),
+url('../font-files/scala-sans/scalasans-webfont.woff') format('woff'),
+url('../font-files/scala-sans/scalasans-webfont.ttf') format('truetype'),
+url('../font-files/scala-sans/scalasans-webfont.svg#scalasansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'scala-sans-bold';
+    src: 	url('../font-files/scala-sans-bold/scalasans-bold-webfont.eot');
+    src: 	url('../font-files/scala-sans-bold/scalasans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+url('../font-files/scala-sans-bold/scalasans-bold-webfont.woff2') format('woff2'),
+url('../font-files/scala-sans-bold/scalasans-bold-webfont.woff') format('woff'),
+url('../font-files/scala-sans-bold/scalasans-bold-webfont.ttf') format('truetype'),
+url('../font-files/scala-sans-bold/scalasans-bold-webfont.svg#scalasansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
