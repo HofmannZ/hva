@@ -11,8 +11,8 @@ Project 1 was an individual assignment. It's main goal was to find a new way to 
 * Custom Google Maps
 
 My final grade
-Code: A+
-UX: B
+* Code: A+
+* UX: B
 
 
 ## Project 2 (team)
@@ -28,9 +28,9 @@ Project 2 part 1 is focused designing a solution for a problem that one of the a
 * Standalone detection and compatibility
 
 Out team's grade:
-Solution: B
-Documentation: B
-Code: A-
+* Solution: B
+* Documentation: B
+* Code: A-
 
 Final grade: B
 
@@ -46,9 +46,9 @@ Project 2 part 2 is focused designing aa web-application to make the lives of te
 * Location based weather
 
 Out team's grade:
-Solution: B-
-Documentation: C+
-Code: A-
+* Solution: B-
+* Documentation: C+
+* Code: A-
 
 Final grade: B
 
@@ -63,4 +63,4 @@ This is a small project for the course Introduction to Programming at the Amster
 * ES6
 
 My final grade
-Code: Still in review
+* Code: Still in review
