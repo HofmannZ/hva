@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+body {
+    @include box-sizing(border-box);
+    @include transition(all 0.3s ease-in-out);
+    font-family: $main-font;
+    color: $almost-black;
+    background-color: $background;
+    
+    p {
+        font-family: $main-font;
+        font-size: 0.8em;
+        font-weight: 300;
+        line-height: 1.6em;
+        
+        &.small {
+            font-size: 0.6em;
+            line-height: 1.2em;
+        }
+
+        &.half {
+            font-size: 0.5em;
+            line-height: 0.8em;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+    } // p
+    
+    h1 {
+        font-family: $main-font;
+        font-size: 1.6em;
+        font-weight: 600;
+        text-align-last: center;
+        line-height: 3.2em;
+    }
+    
+    h2 {
+        font-family: $main-font;
+        font-size: 1.1em;
+        font-weight: 600;
+        line-height: 2.2em;
+    }
+    
+    h3 {
+        font-family: $main-font;
+        font-size: 1em;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    * {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+    #loader {
+        background:url("../images/loading_spinner.svg") no-repeat center center;
+        display: inline-block;
+        position: fixed;
+        top: 45vh;
+        left: 0;
+        width: 100vw;
+        height: 10vh;
+        text-align: center;
+    }
+} // body

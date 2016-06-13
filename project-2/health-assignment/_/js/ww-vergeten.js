@@ -1,0 +1,1 @@
+var aanvragenButton=document.getElementById("aanvragenButton");aanvragenButton&&(aanvragenButton.onclick=function(){return window.location.assign("./login.html"),!1});

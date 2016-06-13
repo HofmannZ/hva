@@ -1,0 +1,19 @@
+// Typografy //
+$main-font:					'Open Sans', sans-serif;
+
+// Colors //
+$accent: 					#83a7d9;
+$almost-black: 				#555;
+$background: 				#f0f3f4;
+$shaddow: 					#e3e6e7;
+$good:						#34c63b;
+$neutral: 					#ffa837;
+$bad: 						#ee5050;
+
+// UI Switch //
+$uiswitch-thumb-tint:      	#ffffff !default;
+$uiswitch-on-tint:         	$good !default;
+$uiswitch-active-tint:     	$shaddow !default;
+$uiswitch-on-tint-start:   	$uiswitch-on-tint !default;
+$uiswitch-on-tint-end:     	desaturate($uiswitch-on-tint-start, 1) !default;
+$uiswitch-off-tint:        	#ffffff !default;

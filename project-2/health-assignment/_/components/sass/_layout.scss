@@ -1,0 +1,1112 @@
+// -------------------- //
+// ----- Prefetch ----- //
+// -------------------- //
+body:before {
+    display: none;
+    content: url("../images/goed.svg") url("../images/neutraal.svg") url("../images/slecht.svg") url("../images/goed-selected.svg") url("../images/neutraal-selected.svg") url("../images/slecht-selected.svg") url("../images/loading_spinner.svg"); 
+}
+
+.container {
+    margin: 0 5vw;
+}
+
+.card {
+    @include transition(all 0.6s ease-in-out);
+    position: relative;
+    width: 90vw;
+    background: white;
+    border: 1px solid darken(white, 5%);
+    border-radius: 3px;
+    margin-top: 5vw;
+    @include box_shadow(1);
+    
+    &:last-child {
+        margin-bottom: 5vw;
+    }
+
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: $almost-black;
+        text-decoration: none;
+    }
+    
+    .card-container {
+        margin: 0 5vw;
+        padding-bottom: 3vh;
+        
+        .bottom-divider {
+            @include transition(all 0.6s ease-in-out);
+            width: 35vw;
+            height: 0.5vh;
+            border-radius: 0.5vh;
+            background-color: $accent;
+            position: relative;
+            top: 3em;
+        }
+
+        .open-card-icon {
+            position: absolute;
+            top: 50%;
+            @include transform(translateY(-50%));
+            right: 5vw;
+            width: 5vw;
+            content: url("../images/icons/next.svg");
+            
+            &.open {
+                content: url("../images/icons/open.svg");
+            }
+        } // .open-card-icon
+
+        .open-card-togle-icon {
+            @include transition(all 0.6s ease-in-out);
+            position: absolute;
+            top: 2vh;
+            right: 5vw;
+            width: 5vw;
+            height: 5vw;
+            background: url("../images/icons/next.svg");
+            background-size: 5vw 5vw;
+            
+            &.open {
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }
+        } // .open-card-togle-icon
+    } // .card-container
+} // .card
+
+header {
+    @include box-sizing(border-box);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: white;
+    border-bottom: 1px solid darken(white, 5%);
+    @include box_shadow(2);
+    
+    h1 {
+        text-align: center;
+        color: $accent;
+        line-height: 10vh;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .back-icon {
+        position: absolute;
+        top: 50%;
+        @include transform(translateY(-50%));
+        left: 5vw;
+        width: 5vw;
+        content: url("../images/icons/back.svg");
+    }
+} // header
+
+main {
+    @include transition(all 0.6s ease-in-out);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    top: 10vh;
+    right: 0;
+    bottom: 10vh;
+    left: 0;
+    width: 100vw;
+    height: 80vh;
+    
+    &.prevent-loading {
+        opacity: 0;
+    }
+
+    .input_field {
+        @include experimental(appearance, none);
+        margin: 3vh 0;
+        width: 80vw;
+        display: block;
+        border: none;
+        padding: 2vh 0;
+        outline: none !important;
+        border-radius: 0;
+        font-size: 1em;
+        border-bottom: solid 1px $accent;
+        @include transition(all 0.5s cubic-bezier(.64,.09,.08,1));
+        background: -webkit-linear-gradient(rgba(255,255,255,0) 96%, $accent 4%);
+        background: -o-linear-gradient(rgba(255,255,255,0) 96%, $accent 4%);
+        background: linear-gradient(rgba(255,255,255,0) 96%, $accent 4%);
+        background-position: -80vw 0;
+        background-size: 80vw 100%;
+        background-repeat: no-repeat;
+        color: $almost-black;
+            
+        &:focus, &:valid {
+            box-shadow: none;
+            outline: none;
+            background-position: 0 0;
+                
+            &::-webkit-input-placeholder {
+                @include transition(all 0.5s cubic-bezier(.64,.09,.08,1));
+                color: $accent;
+                font-size: .6em;
+                font-weight: 300;
+                transform: translateY(-1.6em);
+                visibility: visible !important;
+            }
+        } // &:focus, &:valid
+    } // input_field
+
+    section.welkom {
+        p {
+            margin-top: 3vh;
+        }
+    } // section.welkom
+    
+    section.dagelijkse-beweging {
+        .beweging-teller {
+            width: 40vw;
+            margin: 3vh 20vw;
+            z-index: 1;
+            position: relative;
+            
+            .progressbar-text {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                padding: 0;
+                margin: 0;
+                @include transform(translate(-50%, -50%));
+                
+                h2 {
+                    font-size: 2em;
+                    display: inline-block;
+                    color: $almost-black;
+                    font-weight: 300;
+                }
+
+                p {
+                    font-size: 1em;
+                    display: inline-block;
+                    color: $almost-black;
+                    font-weight: 300;
+                }
+            } // .progressbar-text
+        } // .beweging-teller
+
+        p.small {
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 2vh;
+            line-height: 1em;
+        }
+    } // section.dagelijkse-beweging
+
+    section.weer {
+        .weer-tabs {
+            h2.weer-tab {
+                width: 50%;
+                
+                &.left { 
+                    text-align: left;
+                    float: left;
+                }
+
+                &.right {
+                    text-align: right;
+                    float: right;
+                }
+            } // h2.weer-tabs
+        } // .weer-tabs
+        
+        .weer-slider-wrap {
+            width: 80vw;
+            height: 35vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .weer-vandaag {
+            @include transition(all 0.6s ease-in-out);
+            text-align: center;
+            position: absolute;
+            top: 2.4em;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+            h2 {
+                text-align: center;
+                line-height: 1.6em;
+                font-weight: 300;
+            }
+
+            p {
+                text-align: center;
+                line-height: 1.5em;
+                font-weight: 300;
+                
+                &.temprature {
+                    font-size: 2em;
+                }
+
+                &.half {
+                    display: inline-block;
+                }
+            } // p
+
+            .weer-vandaag-icon {
+                @include transform(translateY(25%));
+                display: inline-block;
+                height: 1.5em;
+                fill: $accent;
+            }
+
+            .weer-detail {
+                display: inline-block;
+            }
+
+            .good {
+                color: $good;
+            }
+
+            .neutral {
+                color: $neutral;
+            }
+
+            .bad {
+                color: $bad;
+            }
+
+            .percent {
+                margin-right: 5vw;
+            }
+        } // .weer-vandaag
+        
+        .weer-week {
+            @include transition(all 0.6s ease-in-out);
+            text-align: center;
+            position: absolute;
+            top: 2.4em;
+            left: 80vw;
+            width: 100%;
+            height: 100%;
+            
+            table.weer-week-table {
+                width: 100%;
+                
+                tr {
+                    td {
+                        text-align: center;
+                        padding: 1.5vh 0;
+                        width: 12.5%;
+                        
+                        p {
+                            line-height: 1em;
+                            font-weight: 300;
+                            display: inline-block;
+                            
+                            &.half {
+                                display: inline-block;
+                            }
+                            
+                            strong {
+                                font-weight: 400;
+                            }
+                        } // p
+                        
+                        svg.weer-week-icon {
+                            @include transform(translateY(25%));
+                            height: 1.5em;
+                            fill: $accent;
+                        }
+                    } // td
+                } // tr
+            } // table.weer-week-table
+        } // .weer-week
+    } // section.weer
+    
+    ul.oefeningen-houding {
+        margin-top: 5vw;
+        width: 90vw;
+
+        li {
+            @include box-sizing(border-box);
+            display: inline-block;
+            height: 5vh;
+            border-radius: 5vh;
+            width: 28vw;
+            
+            &.center {
+                margin: 0 3vw;
+            }
+            
+            h2 {
+                text-align: center;
+                line-height: 5vh;
+            }
+
+            &.active {
+                border: 1px solid darken($accent, 5%);
+                background-color: $accent;
+                
+                h2 {
+                    color: white;
+                }
+            } // &.active
+        } // li
+    } // ul.oefeningen-houding
+    
+    section.oefening {
+        position: relative;
+        height: 15vh;
+        
+        .oefening-icon {
+            position: absolute;
+            top: 2.5vh;
+            left: 5vw;
+            width: 10vh;
+            height: 10vh;
+            border: 1px solid darken($shaddow, 5%);
+            border-radius: 10vh;
+            background-color: $shaddow;
+            background-size: 10vh 10vh;
+        }
+
+        .oefening-icon-nieuw {
+            position: absolute;
+            top: 2.5vh;
+            left: 5vw;
+            width: 3vh;
+            height: 3vh;
+            border: 1px solid darken($good, 5%);
+            border-radius: 3vh;
+            background-color: $good;
+        }
+
+        .next-icon {
+            fill: $shaddow;
+        }
+
+        .oefening-info {
+            position: absolute;
+            top: 3.5vh;
+            left: 25vw;
+            line-height: 1.1em;
+            
+            h3 {
+                color: $good;
+                display: inline-block;
+            }
+
+            h4 {
+                color: $shaddow;
+                display: inline-block;
+            }
+        } // .oefening-info
+
+        h2 {
+            line-height: 1.1em;
+            position: absolute;
+            bottom: 3.5vh;
+            left: 25vw;
+        }
+    } // section.oefening
+
+    section.oefeningen-film {
+        position: relative;
+        height: 50.63vw;
+        background: url(../images/breathing-exercise.jpg) no-repeat;
+        background-size: 90vw 50.63vw;
+        background-position: center;
+        text-align: center;
+        
+        .icon {
+            position: absolute;
+            width: 90vw;
+            height: 10vh;
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+
+        svg {
+            display: inline-block;
+            fill: white;
+            height: 10vh;
+        }
+    } // section.oefeningen-film
+
+    section.oefening-omschrijfing {
+        p {
+            margin-top: 3vh;
+            text-align: justify;
+        }
+    } // section.oefening-omschrijfing
+
+    section.oefening-knop {
+        height: 7vh;
+        background-color: $good;
+        border: 1px solid darken($good, 5%);
+        
+        h2 {
+            color: white;
+            line-height: 7vh;
+            text-align: center;
+        }
+    } // section.oefening-knop
+
+    section.voeg-toe {
+        h2 {
+            text-align: left;
+            font-size: 0.9em;
+        }
+        
+        form {
+            @include transition(all 0.3s ease-in-out);
+            text-align: center;
+            margin-top: 3vh;
+
+            .input_field {
+                width: 80vw;
+                padding: 1vh 0;
+                border-bottom: solid 1px $shaddow;
+                color: $shaddow;
+            }
+            
+            label.beweging-input {
+                display: inline-block;
+                font-size: 0.8em;
+                line-height: 4vh;
+                color: $almost-black;
+            }
+
+            input.beweging-input {
+                display: inline-block;
+                width: 8vw;
+                height: 4vh;
+                line-height: 4vh;
+                text-align: center;
+                font-size: 0.8em;
+                border: none;
+                background-color: white;
+                border-radius: 0;
+                box-shadow: none;
+                color: $accent;
+            }
+
+            .icon-selector {
+                margin: 3vh 17.5vw;
+            }
+
+            .icon-selector input[type="radio"] {
+                display: none;
+            }
+            
+            .neutraal {
+                margin: 0 5vw;
+            }
+            
+            .icon-selector-item.goed {
+                background-image: url("../images/goed.svg");
+            }
+            
+            .icon-selector-item.neutraal {
+                background-image: url("../images/neutraal.svg");
+            }
+            
+            .icon-selector-item.slecht {
+                background-image: url("../images/slecht.svg");
+            }
+            
+            .icon-selector input:checked +.icon-selector-item.goed {
+                background-image: url("../images/goed-selected.svg");
+            }
+            
+            .icon-selector input:checked +.icon-selector-item.neutraal {
+                background-image: url("../images/neutraal-selected.svg");
+            }
+            
+            .icon-selector input:checked +.icon-selector-item.slecht {
+                background-image: url("../images/slecht-selected.svg");
+            }
+            
+            .icon-selector-item {
+                cursor: pointer;
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: inline-block;
+                height: auto;
+                width: 10vw;
+                height: 10vw;
+            }
+
+            .btn {
+                width: 80vw;
+                text-align: center;
+                border: none;
+                background: none;
+                font-size: 1em;
+                line-height: 2em;
+                color: $accent;
+            }
+        } // form
+    } // section.voeg-toe
+
+    section.verslag {
+        position: relative;
+        height: 7vh;
+        
+        .verslag-icon {
+            position: absolute;
+            top: -1.5vh;
+            left: -1.5vh;
+            width: 3vh;
+            height: 3vh;
+            border-radius: 3vh;
+            
+            &.good {
+                border: 1px solid darken($good, 5%);
+                background-color: $good;
+            }
+
+            &.neutral {
+                border: 1px solid darken($neutral, 5%);
+                background-color: $neutral;
+            }
+
+            &.bad {
+                border: 1px solid darken($bad, 5%);
+                background-color: $bad;
+            }
+        } // .verslag-icon
+
+        .next-icon {
+            fill: $shaddow;
+        }
+
+        h2 {
+            line-height: 7vh;
+        }
+    } // section.verslag
+    
+    section.verslag-switcher {
+        ul.verslag-switch {
+            // margin-top: 3vh;
+            width: 80vw;
+
+            li {
+                @include transition(all 0.6s ease-in-out);
+                @include box-sizing(border-box);
+                display: inline-block;
+                height: 5vh;
+                border-radius: 5vh;
+                width: 38.5vw;
+                border: 1px solid white;
+                
+                &:first-child {
+                    margin-right: 3vw;
+                }
+                
+                h2 {
+                    text-align: center;
+                    line-height: 5vh;
+                }
+
+                &.active {
+                    border: 1px solid darken($accent, 5%);
+                    background-color: $accent;
+                    
+                    h2 {
+                        color: white;
+                    }
+                } // &.active
+            } // li
+        } // ul.oefeningen-houding
+        
+        .verslag-switch-chart {
+            position: relative;
+            height: 52vh;
+            margin-top: 3vh;
+            overflow: hidden;
+            
+            .chart {
+                @include transition(all 0.6s ease-in-out);
+                overflow: visible;
+                position: absolute;
+                top: 0;
+                width: 80vw;
+                height: 50vh;
+                // max-height: 80vw;
+                margin: 0;
+                padding: 0;
+                
+                &.kwaliteid {
+                    left: -80vw;
+                    opacity: 0;
+                    
+                    &.active {
+                        left: 0;
+                        opacity: 1;
+                    }
+                } // &.kwaliteid
+
+                &.hoeveelheid {
+                    left: 80vw;
+                    opacity: 0;
+                    
+                    &.active {
+                        left: 0;
+                        opacity: 1;
+                    }
+                } // &.hoeveelheid
+            } // .chart
+        } // .verslag-switch-chart
+        
+        p {
+            margin-top: 2vh;
+            text-align: center;
+            
+            strong {
+                font-weight: 400;
+                
+                &.goed {
+                    color: $good;
+                }
+
+                &.neutraal {
+                    color: $neutral;
+                }
+
+                &.slecht {
+                    color: $bad;
+                }
+            } // strong
+        } // p
+    } // section.verslag-switcher
+    
+    section.verslag-herstel {
+        .chart-herstel {
+            @include transition(all 0.6s ease-in-out);
+            width: 80vw;
+            height: 50vh;
+            max-height: 80vw;
+            padding: 0;
+            margin-top: 3vh;
+        }
+    }
+
+    section.meer-search {
+        .input_field {
+            margin: 3vh 0;
+            width: 80vw;
+            padding: 2vh 0;
+            border-bottom: solid 1px $shaddow;
+            color: $shaddow;
+        } // input
+        
+        .card-container {
+            padding-bottom: 0;
+        }
+    } // section.meer-search
+
+    section.meer {
+        margin-top: 5vw;
+        
+        .card-container {
+            padding-bottom: 0;
+        }
+        
+        ul {
+            li {
+                position: relative;
+                width: 80vw;
+                height: 10vh;
+                border-bottom: solid 1px $shaddow;
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+                
+                a {
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    
+                    h2 {
+                        line-height: 10vh;
+                        color: $almost-black;
+                        margin-left: 5vw;
+                    }
+
+                    .open-icon {
+                        position: absolute;
+                        top: 50%;
+                        @include transform(translateY(-50%));
+                        right: 5vw;
+                        width: 5vw;
+                        content: url("../images/icons/next-accent.svg");
+                    }
+                } // a
+            } // li
+        } // ul
+    } // section.meer
+    
+    section.profile {
+        height: 75vh;
+        
+        .profile-picture {
+            width: 30vw;
+            height: 30vw;
+            margin: 3vh 25vw 0 25vw;
+            border: 1px solid darken($shaddow, 5%);
+            border-radius: 30vw;
+            background-color: $shaddow;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        ul {
+            margin-top: 3vh;
+
+            li {
+                position: relative;
+                width: 80vw;
+                height: 10vh;
+                border-bottom: solid 1px $shaddow;
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+                
+                h2 {
+                    line-height: 10vh;
+                    font-weight: 300;
+                    margin-left: 15vw;
+                    text-align: left;
+                }
+
+                .icon {
+                    position: absolute;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                    left: 5vw;
+                    width: 5vw;
+                    
+                    &.adres {
+                        content: url("../images/icons/adres-accent.svg");
+                    }
+
+                    &.email {
+                        content: url("../images/icons/email-accent.svg");
+                    }
+                    
+                    &.mobiel {
+                        content: url("../images/icons/mobiel-accent.svg");
+                    }
+                }
+            } // li
+        } // ul
+        
+        .btn {
+            width: 80vw;
+            text-align: center;
+            border: none;
+            background: none;
+            font-size: 1em;
+            line-height: 2em;
+            color: $accent;
+        }
+    } // section.profile
+
+    section.informatie {
+        &.card {
+            @include transition(all 0.6s ease-in-out);
+            
+            .card-container {
+                padding-bottom: 0;
+            }
+        }
+
+        h2 {
+            line-height: 7vh;
+        }
+
+        .text {
+            @include transition(all 0.6s ease-in-out);
+            opacity: 0;
+            max-height: 0;
+            
+            &.show {
+                opacity: 1;
+                max-height: 200vh;
+            }
+            
+            p {
+                &:last-child {
+                    padding-bottom: 3vh;
+                }
+
+                i {
+                    color: $accent;
+                    font-weight: 300;
+                    font-style: italic;
+                    margin-bottom: 2vh;
+                }
+                
+                strong {
+                    font-weight: 400;
+                }
+            } // p
+        } // .text
+    } // section.informatie
+    
+    section.instelling-card {
+        &.card {
+            @include transition(all 0.6s ease-in-out);
+        }
+
+        p {
+            @include transition(all 0.6s ease-in-out);
+            margin-top: 3vh;
+        }
+
+        .ah-noti {
+            @include transition(all 0.6s ease-in-out);
+        }
+
+        .ah-off {
+            max-height: 0;
+            opacity: 0;
+            
+            p {
+                margin-top: 0;
+                opacity: 0;
+            }
+        }
+
+        .ah-on {
+            max-height: 100%;
+            opacity: 1;
+        }
+
+        .instelling {
+            @include transition(all 0.6s ease-in-out);
+            position: relative;
+            height: 20vw;
+            width: 100%;
+            margin-top: 2vh;
+            text-align: center;
+            
+            svg {
+                display: inline-block;
+                width: 20vw;
+                height: 20vw;
+                fill: $accent;
+                margin-right: 15vw;
+            }
+
+            .uiswitch {
+                display: inline-block;
+                @include uiswitch();
+                @include vertical-align();
+            }
+        } // .instelling
+    } // section.instelling-card
+    
+    &.login {
+        width: 100vw;
+        
+        p {
+            margin-top: 4vh;
+            font-weight: 300;
+            color: $almost-black;
+            
+            &.error {
+                font-weight: 400; 
+            }
+
+            &.good {
+                color: $good;
+            }
+
+            &.neutral {
+                color: $neutral;
+            }
+
+            &.bad {
+                color: $bad;
+            }
+        } // p
+        
+        .input_field {
+            margin: 3vh 0;
+            width: 80vw;
+            padding: 2vh 0;
+            border-bottom: solid 1px $accent;
+            color: $almost-black;
+        } // input
+
+        .btn {
+            width: 80vw;
+            text-align: right;
+            border: none;
+            background: none;
+            font-size: 1em;
+            line-height: 2em;
+            color: $accent;
+        }
+
+        a.ww-vergeten {
+            text-decoration: none;
+            
+            p {
+                color: $accent;
+            }
+        } // a.ww-vergeten
+    } // &.login
+} // main
+
+nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: white;
+    border-top: 1px solid darken(white, 5%);
+    @include box_shadow(2);
+    
+    ul {
+        position: relative;
+
+        li {
+            display: inline-block;
+            width: 20vw;
+            height: 10vh;
+            
+            .top-accent {
+                display: none;
+            }
+            
+            &.active {
+                .top-accent {
+                    display: block;
+                    width: 20vw;
+                    height: 0.5vh;
+                    border-radius: 0.5vh;
+                    background-color: $accent;
+                }
+
+                a {
+                    height: 9.5vh;
+                    
+                    p.small {
+                        color: $accent;
+                    }
+                    
+                    .menu-icon {
+                        fill: $accent;
+                    }
+                } // a 
+            } // &.active
+            
+            a {
+                width: 20vw;
+                height: 10vh;
+                display: block;
+                text-decoration: none;
+                
+                .menu-icon {
+                    position: relative;
+                    left: 50%;
+                    @include transform(translateX(-50%));
+                    height: 5vh;
+                    margin: 1vh 0;
+                    fill: $almost-black;
+                } // .menu-icon
+                
+                .voeg-toe-circle {
+                    @include box-sizing(border-box);
+                    position: absolute;
+                    bottom: 12vh;
+                    left: 50%;
+                    @include transform(translateX(-50%));
+                    width: 10vh;
+                    height: 10vh;
+                    border-radius: 10vh;
+                    border: 1px solid darken($accent, 5%);
+                    background-color: $accent;
+                    
+                    .voeg-toe-icon {
+                        -webkit-filter: drop-shadow(0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24));
+                                filter: drop-shadow(0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24));
+                        position: relative;
+                        width: 8vh;
+                        height: 8vh;
+                        margin: 1vh 1vh;
+                        fill: white;               
+                    }
+                } // .voeg-toe-circle
+
+                p.small {
+                    text-align: center;
+                    font-weight: 400;
+                    color: $almost-black;
+                }
+            } // a
+        } // li
+    } // ul
+} // nav
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: block;
+    background: rgba(0, 0, 0, 0.7);
+    @include transition(all 0.6s ease-in-out);
+    visibility: hidden;
+    opacity: 0;
+        
+    &.activePopup {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .popup {
+        margin: 13vh auto;
+        background: #fff;
+        position: relative;
+        @include transition(all 0.6s ease-in-out);
+
+        .close {
+            position: absolute;
+            top: 2.5vw;
+            right: 5vw;
+            @include transition(all 0.6s ease-in-out);
+            width: 5vw;
+            height: 5vw;
+            font-size: 2em;
+            font-weight: 600;
+            text-decoration: none;
+            color: $almost-black;
+        }
+
+        .content {
+            margin-top: 3vh;
+            min-height: 30vh;
+            overflow: hidden;
+        }
+    } // .popup
+} // .overlay

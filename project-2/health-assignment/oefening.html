@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Breathing Cloud</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="./_/images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./_/images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./_/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./_/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./_/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./_/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./_/images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./_/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./_/images/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-startup-image" href="./_/images/splash.png" />
+    <link rel="icon" type="image/png" href="./_/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./_/images/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="./_/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="./_/images/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="./_/images/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="./_/images/manifest.json">
+    <link rel="mask-icon" href="./_/images/safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="./_/images/mstile-144x144.png">
+    <meta name="theme-color" content="#83a7d9">
+    <link rel="stylesheet" href="./_/css/styles.css">
+    <script src="./_/js/stay_standalone.js" type="text/javascript"></script>
+    <script src="./_/js/progressbar.min.js" type="text/javascript"></script>
+    <script src="./_/js/firebase.js" type="text/javascript"></script>
+    <script src="./_/js/data-initialization.js" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <a href="./oefeningen.html">
+            <div class="back-icon"></div>
+        </a>
+        <h1 id="oefeningNaam">Oefening</h1>
+    </header>
+    <div id="loader"></div>
+    <main class="prevent-loading">
+        <div class="container">
+            <section class="card oefeningen-film">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 542.3 229.7"><path d="M271 26.7c36.1 0 65.4 29.4 65.4 65.4s-29.4 65.4-65.4 65.4c-36.1 0-65.4-29.4-65.4-65.4S235 26.7 271 26.7M271 10.2c-45.3 0-82 36.7-82 82 0 45.3 36.7 82 82 82 45.3 0 82-36.7 82-82C353 46.9 316.3 10.2 271 10.2L271 10.2z"/><path d="M257.1 55.3c-2.4-1.9-4.4-0.9-4.4 2.1v68.7c0 3 2 4 4.4 2.1l42.9-33.1c2.4-1.9 2.4-4.9 0-6.7L257.1 55.3z"/></svg>
+                </div>
+            </section>
+            <section class="card oefening-omschrijfing">
+                <div class="card-container">
+                    <div class="bottom-divider"></div>
+                    <h2>Omschrijfing</h2>
+                    <p id="oefeningOmschrijfing"></p>
+                </div>
+            </section>
+            <section class="card oefening-knop">
+                <a href="./oefeningen.html">
+                    <div class="card-container">
+                        <h2>OEFENING VOLTOOID</h2>
+                    </div>
+                </a>
+            </section>
+        </div>
+    </main>
+    <nav>
+        <ul>
+            <li>
+                <div class="top-accent"></div>
+                <a href="./index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="menu-icon" viewBox="0 0 24 24"><path d="M14 2C12.9 2 12 2.9 12 4 12 4.2 12 4.4 12.1 4.5L9.9 6.3C9.7 6.1 9.3 6 9 6 8.3 6 7.8 6.3 7.4 6.8L5.9 6.5C5.7 5.6 4.9 5 4 5 2.9 5 2 5.9 2 7 2 8.1 2.9 9 4 9 4.7 9 5.3 8.6 5.7 8.1L7 8.4C7.2 9.3 8 10 9 10 10.1 10 11 9.1 11 8 11 7.8 11 7.6 10.9 7.5L13.1 5.8C13.3 5.9 13.7 6 14 6 14.3 6 14.6 5.9 14.9 5.8L18.1 8.4C18 8.6 18 8.8 18 9 18 10.1 18.9 11 20 11 21.1 11 22 10.1 22 9 22 7.9 21.1 7 20 7 19.7 7 19.4 7.1 19.1 7.2L15.9 4.6C16 4.4 16 4.2 16 4 16 2.9 15.1 2 14 2zM12 12L12 22 16 22 16 12 12 12zM17 15L17 22 21 22 21 15 17 15zM2 16L2 22 6 22 6 16 2 16zM7 17L7 22 11 22 11 17 7 17z"/></svg>
+                    <p class="small">Dashboard</p>
+                </a>
+            </li><!--
+            --><li class="active">
+                <div class="top-accent"></div>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="menu-icon" viewBox="0 0 24 24"><path d="M17 2C15.9 2 15 2.9 15 4 15 5.1 15.9 6 17 6 18.1 6 19 5.1 19 4 19 2.9 18.1 2 17 2zM10.9 5.2C10.5 5.3 10.1 5.3 9.8 5.5L9.8 5.5 9.7 5.5C8.7 6.1 6.6 7.1 6.6 7.1L7.4 8.9C7.4 8.9 9.4 8 10.6 7.3 11 7.2 11.2 7.1 11.3 7.2L11.4 7.3 11.4 7.3 12.4 7.5 10.3 11.2C9.8 12.1 10 13.2 10.8 13.9L13.8 16C14 16.3 14.1 16.7 13.9 17L12 22 14.1 22 15.8 17.7C16.2 16.6 16 15.3 15.1 14.5L13.4 12.8 15.1 9.7 15.5 10.4 15.5 10.4C16 11.5 17.1 12.1 18.2 12.1L21.1 12.1 21.1 10.1 18.2 10.1C17.7 10.1 17.4 9.9 17.3 9.6L17.3 9.6 16.5 8 16.5 7.9C16.2 7.4 15.7 6.9 15.2 6.6L15.1 6.6 13.4 5.8 13.4 5.8 13.3 5.8 12.1 5.4 12 5.3 12 5.4C11.6 5.2 11.2 5.2 10.9 5.2zM9.6 14.2L9.3 14.6C9.1 14.8 8.8 15 8.5 15L4 15 4 17 8.5 17C9.4 17 10.3 16.5 10.9 15.8L10.9 15.8 11.2 15.4 9.6 14.2z"/></svg>
+                    <p class="small">Oefeningen</p>
+                </a>
+            </li><!--
+            --><li>
+                <a href="./voeg-toe.html">
+                    <span class="voeg-toe-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="voeg-toe-icon" viewBox="0 0 24 24"><path d="M11 5L11 11 5 11 5 13 11 13 11 19 13 19 13 13 19 13 19 11 13 11 13 5 11 5z"/></svg>
+                    </span>
+                    <p class="small">Voeg toe</p>
+                </a>
+            </li><!--
+            --><li>
+                <div class="top-accent"></div>
+                <a href="./verslagen.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="menu-icon" viewBox="0 0 24 24"><path d="M8.5 2.1L5 5.2 3.5 3.7 2.1 5.1 4.3 7.3 5 8 5.7 7.3 9.9 3.5 8.5 2.1zM12 5L12 7 22 7 22 5 12 5zM8.5 9.1L5 12.2 3.5 10.7 2.1 12.1 4.3 14.3 5 15 5.7 14.3 9.9 10.5 8.5 9.1zM12 12L12 14 22 14 22 12 12 12zM8.5 16.1L5 19.2 3.5 17.7 2.1 19.1 4.3 21.3 5 22 5.7 21.3 9.9 17.5 8.5 16.1zM12 19L12 21 22 21 22 19 12 19z"/></svg>
+                    <p class="small">Verslagen</p>
+                </a>
+            </li><!--
+            --><li>
+                <div class="top-accent"></div>
+                <a href="./meer.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="menu-icon" viewBox="0 0 24 24"><path d="M2 5L2 7 22 7 22 5 2 5zM2 11L2 13 22 13 22 11 2 11zM2 17L2 19 22 19 22 17 2 17z"/></svg>
+                    <p class="small">Meer</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <script src="./_/js/oefening.js" type="text/javascript"></script>
+</body>
+</html>

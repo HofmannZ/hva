@@ -1,0 +1,76 @@
+/* CSS declarations go here */
+
+.mdl-layout__header-row {
+	.mdl-navigation__link {
+		font-weight: bold;
+
+		&.active-navigation__link {
+			color: #FF9800;
+		}
+	}
+}
+
+.center-spinner {
+	position: relative;
+	left: 50%;
+}
+
+.center-progress {
+	position: relative;
+	left: 50%;
+	-webkit-transform: translateX(-50%); /* Chrome, Safari, Opera */
+	-ms-transform: translateX(-50%); /* IE 9 */
+  transform: translateX(-50%);
+}
+
+.main-card {
+	width: 80vw;
+	margin: auto;
+	margin-top: 10vh;
+	@media screen and (min-width: 1024px) {
+    width: 60vw;
+		margin-top: 5vh;
+  }
+}
+
+.text-error {
+	color: #F44336;
+}
+
+.text-succes {
+	color: #4CAF50;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.btn-right {
+	float: right;
+}
+
+.hide {
+	display: none;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.avatar {
+	height: 32px;
+	width: 32px;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	margin-left: 2vw;
+}
+
+.grid {
+	width: 100vw;
+	margin-top: 5vh;
+}
+
+.photo {
+	margin: 2.5vh 0;
+	display: inline-block;
+}
