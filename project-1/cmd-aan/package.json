@@ -1,6 +1,7 @@
 {
-  "name": "tma",
+  "name": "ISGA_assistant",
   "version": "0.1.0",
+	"author": "Zino Hofmann",
   "dependencies": {
     "firebase": "^2.3.1",
     "grunt": "~0.4.5",

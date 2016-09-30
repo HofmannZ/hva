@@ -1,12 +1,12 @@
 {
-  "name": "Breathing Cloud",
+  "name": "Breathing_Cloud",
   "version": "1.0.0",
   "description": "",
   "main": "gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Zino Hofmann",
   "license": "ISC",
   "devDependencies": {
     "grunt": "^0.4.5",

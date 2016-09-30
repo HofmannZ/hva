@@ -1,5 +1,5 @@
 {
-  "name": "react-chat-speedbuild",
+  "name": "programming-introduction",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HofmannZ/react-chat-speedbuild.git"
+    "url": "git+https://github.com/HofmannZ/hva.git"
   },
   "author": {
     "name": "Zino Hofmann",
@@ -16,9 +16,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HofmannZ/react-chat-speedbuild/issues"
+    "url": "https://github.com/HofmannZ/hva/issues"
   },
-  "homepage": "https://github.com/HofmannZ/react-chat-speedbuild#readme",
+  "homepage": "https://github.com/HofmannZ/hva#readme",
   "dependencies": {
     "firebase": "^3.0.4",
     "react": "^15.1.0",
