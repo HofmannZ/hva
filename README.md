@@ -12,7 +12,7 @@ Project 1 was an individual assignment. It's main goal was to find a new way to 
 
 #### My final grade:
 * Code: A+
-* UX: B
+* UX: A
 
 [Demo](http://zino.hofmann.amsterdam/hva/cmd/project/1/cmd-aan/)
 (Best viewed with mobile screen size.)
@@ -30,11 +30,11 @@ Project 2 part 1 is focused designing a solution for a problem that one of the a
 * Standalone detection and compatibility
 
 #### Our team's grade:
-* Solution: B
-* Documentation: B
-* Code: A-
+* Solution: A
+* Documentation: A
+* Code: A+
 
-Final grade: B
+Final grade: A
 
 [Demo](http://zino.hofmann.amsterdam/hva/cmd/project/2/sportersopdracht/wekker.html)
 (Best viewed with mobile screen size.)
@@ -50,11 +50,11 @@ Project 2 part 2 is focused designing a web-application to make the lives of ter
 * Location based weather
 
 #### Out team's grade:
-* Solution: B-
-* Documentation: C+
-* Code: A-
+* Solution: B+
+* Documentation: B
+* Code: A+
 
-Final grade: B
+Final grade: A
 
 [Demo](http://zino.hofmann.amsterdam/hva/cmd/project/2/gezondheidsopdracht/)
 (Best viewed with mobile screen size.)
@@ -71,6 +71,6 @@ This is a small project for the course Introduction to Programming at the Amster
 * ES6 syntax
 
 #### My final grade:
-* Code: A-
+* Code: A+
 
 For this project I do not have a live demo, clone the [repository](https://github.com/HofmannZ/hva/tree/master/programming-introduction) if you want to see the running application.
